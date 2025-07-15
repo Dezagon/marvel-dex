@@ -1,4 +1,12 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Marvel";
+  src: url("../public/fonts/marvel-font/MarvelRegular-Dj83.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -6,5 +14,4 @@
   font-weight: 400;
   color-scheme: dark;
   text-rendering: optimizeLegibility;
-  background-color: black;
 }

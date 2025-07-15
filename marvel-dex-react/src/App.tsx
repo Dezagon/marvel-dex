@@ -6,7 +6,7 @@ function App() {
   // const [count, setCount] = useState(0);
   // MAIN LAYOUT FOR ROUTES
   return (
-    <div>
+    <div className="bg-black">
       <div>
         <Navbar />
       </div>
