@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+// import { useState } from "react";
 import type { Character } from "../types";
 // import { Link } from "react-router-dom";
 // import { formatCharacterNames } from "../functions";
-import { SearchBar } from "./SearchBar";
+// import { SearchBar } from "./SearchBar";
 import { RenderCharacterLinks } from "./RenderCharacterLinks";
 
 type HeroesProps = {
@@ -11,7 +11,7 @@ type HeroesProps = {
 };
 
 export const Heroes: React.FC<HeroesProps> = ({ characters, handleClick }) => {
-  const [searchValue, setSearchValue] = useState<string>("");
+  // const [searchValue, setSearchValue] = useState<string>("");
 
   return (
     <main className="bg-black w-screen color-white flex flex-col items-center mt-5">
@@ -19,7 +19,7 @@ export const Heroes: React.FC<HeroesProps> = ({ characters, handleClick }) => {
       <div className="w-full flex justify-evenly">
         <div className="w-[20%]">
           {/* Search by name */}
-          <SearchBar placeholder={"Search by name..."} handleClick={setSearchValue} value={searchValue} />
+          {/* <SearchBar placeholder={"Search by name..."} handleClick={setSearchValue} value={searchValue} /> */}
         </div>
         <div>{/* Search by comic */}</div>
       </div>

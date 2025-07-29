@@ -6,16 +6,14 @@ import { Home } from "./components/Home";
 import { Heroes } from "./components/Heroes";
 import { Villains } from "./components/Villains";
 import { CharacterSummary } from "./components/CharacterSummary";
+import { headers } from "./headers";
 
 function App() {
   // !!!
   // OPTIMIZE API CALL, THERE HAS TO BE A WAY TO DO IT EFFICIENTLY
   // !!!
 
-  const headers = {
-    Accept: "application/json",
-    Authorization: import.meta.env.VITE_MARVELDEX_ACCESS_TOKEN,
-  };
+  // const auth_token = import.meta.env.VITE_MARVELDEX_ACCESS_TOKEN;
 
   const unusableCharacterIDs: string[] = ["128", "131", "131", "133", "134", "283", "363", "447", "482", "511", "512", "621", "629", "694"];
   // USE STATE FOR LIST OF ALL MARVEL CHARACTERS
