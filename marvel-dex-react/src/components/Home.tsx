@@ -1,12 +1,32 @@
-export const Home: React.FC = () => {
+// import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import type { Character } from "../types";
+import { formatCharacterNames, randomIndex } from "../functions";
+
+type HomeProps = {
+  characters: Character[];
+  handleClick: (character: Character) => void;
+};
+export const Home: React.FC<HomeProps> = ({ characters, handleClick }) => {
+  const randomIndexPoints: number[] = randomIndex(characters.length);
   return (
-    <main>
-      <h2 className="text-2xl color-white"> Enter the Realm of Power </h2>
-      <p>
-        Unleash your senses. Witness the eternal struggle between justice and vengeance. This is MRVL-DX, where legends rise and destinies are
+    <main className="bg-black color-white flex flex-col items-center w-screen">
+      <h2 className="text-3xl p-2 font-orbitron font-bold"> Enter the Realm of Power </h2>
+      <p className="text-2xl w-[50vw] text-center p-2 font-orbitron">
+        Unleash your senses. Witness the eternal struggle between justice and vengeance. This is MARVEL-DEX, where legends rise and destinies are
         rewritten
       </p>
-      <section>{/* <QuickSelect /> */}</section>
+      {/* CUSTOM RENDERING OF CHARACTERS */}
+      <p className="text-2xl">Quick start</p>
+      <section className="flex flex-wrap w-[90%] justify-evenly">
+        {characters.slice(randomIndexPoints[0], randomIndexPoints[1]).map((character: Character, index: number) => (
+          // USE TRANSFORM FOR CUSTOM CAROUSEL
+          <Link key={index} to={`/character/${formatCharacterNames(character.name)}`} onClick={() => handleClick(character)} className="w-[10%]">
+            <img src={character.image.url} className="w-full" />
+            <p className="color-white">{character.name}</p>
+          </Link>
+        ))}
+      </section>
     </main>
   );
 };

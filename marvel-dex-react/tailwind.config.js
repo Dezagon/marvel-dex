@@ -3,6 +3,9 @@ module.exports = {
     extend: {
       fontFamily: {
         marvel: ["Marvel"],
+        orbitron: ["Orbitron"],
+        orbitronBold: ["Orbitron-Bold"],
+        futureEarth: ["Future Earth"],
       },
     },
   },
