@@ -44,7 +44,8 @@ export const PowerStats: React.FC<PowerStatsProps> = ({ character }) => {
     },
   ];
   return (
-    <div className="flex flex-col w-screen md:w-[60vw] mt-5">
+    // <div className="flex flex-col w-screen md:w-[60vw] mt-5">
+    <div className="flex flex-col w-screen md:grow mt-5">
       {characterStats.map((stat: Stat) => (
         <div className="flex mb-1">
           <div className="text-2xl md:text-3xl md:bg-[url('/powerstatsSVG.png')] md:w-[50%] md:bg-no-repeat md:pl-2 absolute md:z-[5]">

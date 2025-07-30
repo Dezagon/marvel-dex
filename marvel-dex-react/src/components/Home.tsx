@@ -28,7 +28,7 @@ export const Home: React.FC<HomeProps> = ({ characters, handleClick }) => {
             className="w-[40vw] mb-4 md:w-[10%] md:mb-0"
           >
             <img src={character.image.url} className="w-full md:aspect-[1/2] md:object-cover" />
-            <p className="text-lg w-full color-white sm:text-sm md:w-full md:text-lg">{character.name}</p>
+            <p className="text-lg w-full color-white md:w-full md:text-lg">{character.name}</p>
           </Link>
         ))}
       </section>

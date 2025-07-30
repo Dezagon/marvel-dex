@@ -3,6 +3,10 @@
 @plugin "flowbite/plugin";
 @source "../node_modules/flowbite";
 
+@theme {
+  --breakpoint-md: 1080px;
+}
+
 @font-face {
   font-family: "Marvel";
   src: url("/fonts/marvel-font/MarvelRegular-Dj83.ttf") format("truetype");
