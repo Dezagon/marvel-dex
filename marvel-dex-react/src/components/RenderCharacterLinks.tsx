@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { formatCharacterNames } from "../functions";
-import type { Character } from "../types";
+import { formatCharacterNames } from "../typescripts/functions";
+import type { Character } from "../typescripts/types";
 
 type RenderCharacterLinksProps = {
   characters: Character[];
@@ -18,9 +18,13 @@ export const RenderCharacterLinks: React.FC<RenderCharacterLinksProps> = ({ char
           }
         })
         .map((character: Character, index: number) => (
-          <Link key={index} to={`/character/${formatCharacterNames(character.name)}`} onClick={() => handleClick(character)} className="w-[15%]">
-            {character.image.url ? <img src={character.image.url} className="h-[75%] m-2" /> : <div>image not found in database</div>}
-            {/* <img src={character.image.url} onStalled={() => "Portrait not found in database"} className="h-[75%] m-2" /> */}
+          <Link
+            key={index}
+            to={`/character/${formatCharacterNames(character.name)}`}
+            onClick={() => handleClick(character)}
+            className="w-[40vw] mb-6 md:w-[15%]"
+          >
+            <img src={character.image.url} className="w-full aspect-[1/2] object-cover" />
             <p className="color-white text-2xl">{character.name}</p>
           </Link>
         ))}

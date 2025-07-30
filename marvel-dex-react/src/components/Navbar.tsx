@@ -19,15 +19,12 @@ export const Navbar: React.FC = () => {
         {/* ADD PAGE INDICATOR FOR TOP LEFT OF NAV BAR */}
         {locationInNavItems ? (
           <div className="w-screen flex justify-between">
-            <h1 className="text-7xl self-end ml-5">{location.pathname.slice(1).toUpperCase()}</h1>
-            <img src={MarvelDexLogo} alt="Marvel Dex logo" className="w-[35vw] h-30 object-cover transition" />
+            <h1 className="text-4xl md:text-7xl self-end ml-5">{location.pathname.slice(1).toUpperCase()}</h1>
+            <img src={MarvelDexLogo} alt="Marvel Dex logo" className="object-cover w-[35vw] md:w-[35vw] md:h-30" />
           </div>
         ) : (
           <div className="w-screen flex justify-center items-center">
-            {/* <div className="bg-[#ec1f27] h-[70%] flex items-center">
-            <h1 className="text-8xl color-white font-marvel">MRVL-DEX</h1>
-          </div> */}
-            <img src={MarvelDexLogo} alt="Marvel Dex logo" className="w-[35vw] h-30 object-cover transition" />
+            <img src={MarvelDexLogo} alt="Marvel Dex logo" className="w-[55vw] h-50 object-cover md:w-[35vw] md:h-30" />
           </div>
         )}
       </div>

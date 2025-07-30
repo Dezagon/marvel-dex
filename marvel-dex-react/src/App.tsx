@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import type { Character } from "./types";
+import type { Character } from "./typescripts/types";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MarvelDex } from "./MarvelDex";
 import { Home } from "./components/Home";
 import { Heroes } from "./components/Heroes";
 import { Villains } from "./components/Villains";
 import { CharacterSummary } from "./components/CharacterSummary";
-import { headers } from "./headers";
+import { headers } from "./typescripts/headers";
 
 function App() {
   // !!!

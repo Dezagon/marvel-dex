@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { formatCharacterNames } from "../functions";
+import { formatCharacterNames } from "../typescripts/functions";
 
 type SearchBarProps = {
   placeholder: string;

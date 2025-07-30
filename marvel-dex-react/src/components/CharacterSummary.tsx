@@ -1,5 +1,5 @@
 // import { useParams } from "react-router-dom";
-import type { Character } from "../types";
+import type { Character } from "../typescripts/types";
 import { PowerStats } from "./PowerStats";
 
 type CharacterSummaryProps = {
@@ -10,21 +10,21 @@ type CharacterSummaryProps = {
 export const CharacterSummary: React.FC<CharacterSummaryProps> = ({ character }) => {
   // const powerStatLabels: string[] = ["INTELLIGENCE", "DURABILITY", "COMBAT", "POWER", "SPEED", "STRENGTH"];
   return (
-    <main className="bg-black">
+    <main className="bg-black w-screen">
       {character ? (
-        <main className="flex w-screen">
+        <main className="flex flex-col w-full md:flex-row">
           {/* Character Image */}
-          <img src={character.image.url} className="h-screen object-cover" />
+          <img src={character.image.url} className="w-screen md:w-auto md:h-screen md:object-cover" />
 
           {/* Section to right of image */}
-          <div className="flex flex-col ml-2">
+          <div className="flex flex-col w-screen md:grow md:ml-2 md:mr-2 md:w-auto">
             {/* Character Name */}
             <section>
-              <h1 className="text-6xl">{character.name.toUpperCase()}</h1>
+              <h1 className="text-5xl md:text-6xl">{character.name.toUpperCase()}</h1>
             </section>
             {/* Character Biography */}
-            <section className="flex bg-[#2A2A2A]">
-              <div className="w-[30vw]">
+            <section className="flex flex-col grow md:flex-row bg-[#2A2A2A]">
+              <div className="w-full md:w-[30vw]">
                 <div>
                   <span className="text-[#FF4A4A]">FULL NAME:</span> {character.biography["full-name"]}
                 </div>
@@ -60,7 +60,7 @@ export const CharacterSummary: React.FC<CharacterSummaryProps> = ({ character })
                 </p>
               </div>
               {/* Affiliations and Connections */}
-              <div className="w-[30vw]">
+              <div className="w-screen md:w-[30vw]">
                 <p>
                   <span className="text-[#FF4A4A]">GROUP-AFFILIATIONS:</span> {character.connections["group-affiliation"]}
                 </p>

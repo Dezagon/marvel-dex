@@ -1,4 +1,4 @@
-import type { Character } from "../types";
+import type { Character } from "../typescripts/types";
 
 type PowerStatsProps = {
   character: Character;
@@ -44,11 +44,13 @@ export const PowerStats: React.FC<PowerStatsProps> = ({ character }) => {
     },
   ];
   return (
-    <div className="flex flex-col w-[60vw] mt-5">
+    <div className="flex flex-col w-screen md:w-[60vw] mt-5">
       {characterStats.map((stat: Stat) => (
         <div className="flex mb-1">
-          <div className="text-3xl bg-[url('/powerstatsSVG.png')] w-[50%] bg-no-repeat pl-2 absolute z-[5]">{stat.label}</div>
-          <div className="h-10 pl-82 text-2xl" style={{ width: `${stat.stat}%`, backgroundColor: `${stat.bgColor}` }}>
+          <div className="text-2xl md:text-3xl md:bg-[url('/powerstatsSVG.png')] md:w-[50%] md:bg-no-repeat md:pl-2 absolute md:z-[5]">
+            {stat.label}
+          </div>
+          <div className="flex self-center h-10 pl-60 md:pl-82 text-2xl" style={{ width: `${stat.stat}%`, backgroundColor: `${stat.bgColor}` }}>
             {stat.stat}
           </div>
         </div>
