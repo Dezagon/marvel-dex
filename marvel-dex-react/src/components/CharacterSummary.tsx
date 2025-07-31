@@ -1,6 +1,7 @@
 // import { useParams } from "react-router-dom";
 import type { Character } from "../typescripts/types";
 import { PowerStats } from "./PowerStats";
+import { handleNull } from "../typescripts/functions";
 
 type CharacterSummaryProps = {
   // characters: Character[];
@@ -20,53 +21,53 @@ export const CharacterSummary: React.FC<CharacterSummaryProps> = ({ character })
           <div className="flex flex-col w-screen md:ml-2 md:mr-2 md:w-[65vw]">
             {/* Character Name */}
             <section>
-              <h1 className="text-5xl md:text-6xl">{character.name.toUpperCase()}</h1>
+              <h1 className="text-5xl md:text-6xl">{handleNull(character.name.toUpperCase())}</h1>
             </section>
             {/* Character Biography */}
             <section className="flex flex-col grow md:flex-row md:shrink md:grow-0 bg-[#2A2A2A]">
               <div className="w-full md:w-[30vw]">
                 <div>
-                  <span className="text-[#FF4A4A]">FULL NAME:</span> {character.biography["full-name"]}
+                  <span className="text-[#FF4A4A]">FULL NAME:</span> {handleNull(character.biography["full-name"])}
                 </div>
                 <div>
-                  <span className="text-[#FF4A4A]">ALTER-EGO:</span> {character.biography["alter-egos"]}
+                  <span className="text-[#FF4A4A]">ALTER-EGO:</span> {handleNull(character.biography["alter-egos"])}
                 </div>
                 <p>
-                  <span className="text-[#FF4A4A]">ALIASES:</span> {character.biography.aliases.join(", ")}
+                  <span className="text-[#FF4A4A]">ALIASES:</span> {handleNull(character.biography.aliases.join(", "))}
                 </p>
                 <p>
-                  <span className="text-[#FF4A4A]">PLACE-OF-BIRTH:</span> {character.biography["place-of-birth"]}
+                  <span className="text-[#FF4A4A]">PLACE-OF-BIRTH:</span> {handleNull(character.biography["place-of-birth"])}
                 </p>
                 <p>
-                  <span className="text-[#FF4A4A]">FIRST-APPEARANCE:</span> {character.biography["first-appearance"]}
+                  <span className="text-[#FF4A4A]">FIRST-APPEARANCE:</span> {handleNull(character.biography["first-appearance"])}
                 </p>
                 <p>
-                  <span className="text-[#FF4A4A]">PUBLISHER:</span> {character.biography.publisher}
+                  <span className="text-[#FF4A4A]">PUBLISHER:</span> {handleNull(character.biography.publisher)}
                 </p>
                 <p>
-                  <span className="text-[#FF4A4A]">ALIGNMENT:</span> {character.biography.alignment}
+                  <span className="text-[#FF4A4A]">ALIGNMENT:</span> {handleNull(character.biography.alignment)}
                 </p>
                 <p>
-                  <span className="text-[#FF4A4A]">GENDER:</span> {character.appearance.gender}
+                  <span className="text-[#FF4A4A]">GENDER:</span> {handleNull(character.appearance.gender)}
                 </p>
                 <p>
-                  <span className="text-[#FF4A4A]">CLASSIFICATION:</span> {character.appearance.race}
+                  <span className="text-[#FF4A4A]">CLASSIFICATION:</span> {handleNull(character.appearance.race)}
                 </p>
                 <p>
-                  <span className="text-[#FF4A4A]">HEIGHT:</span> {character.appearance.height.join(", ")}
+                  <span className="text-[#FF4A4A]">HEIGHT:</span> {handleNull(character.appearance.height.join(", "))}
                 </p>
                 <p>
-                  <span className="text-[#FF4A4A]">WEIGHT:</span> {character.appearance.weight.join(", ")}
+                  <span className="text-[#FF4A4A]">WEIGHT:</span> {handleNull(character.appearance.weight.join(", "))}
                 </p>
               </div>
               {/* Affiliations and Connections */}
               <div className="w-screen md:w-[30vw]">
                 <p>
-                  <span className="text-[#FF4A4A]">GROUP-AFFILIATIONS:</span> {character.connections["group-affiliation"]}
+                  <span className="text-[#FF4A4A]">GROUP-AFFILIATIONS:</span> {handleNull(character.connections["group-affiliation"])}
                 </p>
                 <p>
                   {" "}
-                  <span className="text-[#FF4A4A]">RELATIVES:</span> {character.connections.relatives}
+                  <span className="text-[#FF4A4A]">RELATIVES:</span> {handleNull(character.connections.relatives)}
                 </p>
               </div>
             </section>

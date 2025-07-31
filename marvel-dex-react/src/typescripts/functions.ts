@@ -1,5 +1,7 @@
 //CUSTOM FUNCTIONS FOR STRING HANDLING ARE HERE
 
+// import type { Character } from "./types";
+
 // formatCharacterNames RETURNS THE CHARACTER'S NAMES IN "mister-fantastic" FORMAT
 export const formatCharacterNames = (name: string): string => {
   if (name.includes(" ")) {
@@ -25,4 +27,24 @@ export const randomIndex = (maxLength: number): number[] => {
   const max: number = Math.floor(maxLength - 8);
   const randomStart = Math.floor(Math.random() * (max - min + 1)) + min;
   return [randomStart, randomStart + 8];
+};
+
+export const handleNull = (info: string): string => {
+  return info == "null" || info == "-" ? "UNKNOWN" : info;
+};
+
+export const determineBackgroundColor = (stat: string): string => {
+  if (stat == "null") {
+    return "#FF4A4A";
+  } else if (Number(stat) >= 80) {
+    return "#129003";
+  } else if (Number(stat) >= 65 && Number(stat) <= 79) {
+    return "#B0D033";
+  } else if (Number(stat) >= 35 && Number(stat) <= 64) {
+    return "#E3D402";
+  } else if (Number(stat) >= 25 && Number(stat) <= 34) {
+    return "#E99001";
+  } else {
+    return "#FF4A4A";
+  }
 };

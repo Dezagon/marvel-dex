@@ -1,4 +1,5 @@
 import type { Character } from "../typescripts/types";
+import { determineBackgroundColor } from "../typescripts/functions";
 
 type PowerStatsProps = {
   character: Character;
@@ -14,32 +15,32 @@ export const PowerStats: React.FC<PowerStatsProps> = ({ character }) => {
   const characterStats: Stat[] = [
     {
       label: "INTELLIGENCE",
-      bgColor: "#129003",
+      bgColor: determineBackgroundColor(character.powerstats.intelligence),
       stat: character.powerstats.intelligence,
     },
     {
       label: "DURABILITY",
-      bgColor: "#B0D033",
+      bgColor: determineBackgroundColor(character.powerstats.durability),
       stat: character.powerstats.durability,
     },
     {
       label: "COMBAT",
-      bgColor: "#E3D402",
+      bgColor: determineBackgroundColor(character.powerstats.combat),
       stat: character.powerstats.combat,
     },
     {
       label: "POWER",
-      bgColor: "#E99001",
+      bgColor: determineBackgroundColor(character.powerstats.power),
       stat: character.powerstats.power,
     },
     {
       label: "SPEED",
-      bgColor: "#FF4A4A",
+      bgColor: determineBackgroundColor(character.powerstats.speed),
       stat: character.powerstats.speed,
     },
     {
       label: "STRENGTH",
-      bgColor: "#FF4A4A",
+      bgColor: determineBackgroundColor(character.powerstats.strength),
       stat: character.powerstats.strength,
     },
   ];
@@ -52,7 +53,7 @@ export const PowerStats: React.FC<PowerStatsProps> = ({ character }) => {
             {stat.label}
           </div>
           <div className="flex h-10 pl-60 md:pl-82 md:w-full text-2xl" style={{ width: `${stat.stat}%`, backgroundColor: `${stat.bgColor}` }}>
-            {stat.stat}
+            {stat.stat == "null" ? "UNKNOWN" : stat.stat}
           </div>
         </div>
       ))}
