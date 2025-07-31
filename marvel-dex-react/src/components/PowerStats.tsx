@@ -44,14 +44,14 @@ export const PowerStats: React.FC<PowerStatsProps> = ({ character }) => {
     },
   ];
   return (
-    // <div className="flex flex-col w-screen md:w-[60vw] mt-5">
-    <div className="flex flex-col w-screen md:grow mt-5">
+    <div className="flex flex-col w-screen md:w-[60vw] mt-5">
+      {/* // <div className="flex flex-col w-screen md:w-[60vw] md:grow mt-5"> */}
       {characterStats.map((stat: Stat) => (
         <div className="flex mb-1">
-          <div className="text-2xl md:text-3xl md:bg-[url('/powerstatsSVG.png')] md:w-[50%] md:bg-no-repeat md:pl-2 absolute md:z-[5]">
+          <div className="text-2xl md:text-3xl md:bg-[url('/powerstatsSVG.png')] md:w-[50%] md:object-cover md:self-start md:bg-no-repeat md:pl-2 absolute md:z-[5]">
             {stat.label}
           </div>
-          <div className="flex self-center h-10 pl-60 md:pl-82 text-2xl" style={{ width: `${stat.stat}%`, backgroundColor: `${stat.bgColor}` }}>
+          <div className="flex h-10 pl-60 md:pl-82 md:w-full text-2xl" style={{ width: `${stat.stat}%`, backgroundColor: `${stat.bgColor}` }}>
             {stat.stat}
           </div>
         </div>

@@ -25,7 +25,7 @@ export const Home: React.FC<HomeProps> = ({ characters, handleClick }) => {
             key={index}
             to={`/character/${formatCharacterNames(character.name)}`}
             onClick={() => handleClick(character)}
-            className="w-[40vw] mb-4 md:w-[10%] md:mb-0"
+            className="w-[40vw] shrink mb-4 border border-[#E62429] md:w-[10%] md:mb-0"
           >
             <img src={character.image.url} className="w-full md:aspect-[1/2] md:object-cover" />
             <p className="text-lg w-full color-white md:w-full md:text-lg">{character.name}</p>

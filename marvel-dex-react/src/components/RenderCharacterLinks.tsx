@@ -22,7 +22,7 @@ export const RenderCharacterLinks: React.FC<RenderCharacterLinksProps> = ({ char
             key={index}
             to={`/character/${formatCharacterNames(character.name)}`}
             onClick={() => handleClick(character)}
-            className="w-[40vw] mb-6 md:w-[15%]"
+            className="w-[40vw] shrink border border-[#E62429] mb-6 md:w-[15%]"
           >
             <img src={character.image.url} className="w-full aspect-[1/2] object-cover" />
             <p className="color-white text-2xl">{character.name}</p>
