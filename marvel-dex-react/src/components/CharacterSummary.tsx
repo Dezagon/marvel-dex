@@ -18,13 +18,13 @@ export const CharacterSummary: React.FC<CharacterSummaryProps> = ({ character })
           <img src={character.image.url} className="w-screen md:w-auto md:h-screen md:object-cover" />
 
           {/* Section to right of image */}
-          <div className="flex flex-col w-screen md:ml-2 md:mr-2 md:w-[65vw]">
+          <div className="flex flex-col w-screen md:ml-2 md:mr-2 md:grow">
             {/* Character Name */}
             <section>
               <h1 className="text-5xl md:text-6xl">{handleNull(character.name.toUpperCase())}</h1>
             </section>
             {/* Character Biography */}
-            <section className="flex flex-col grow md:flex-row md:shrink md:grow-0 bg-[#2A2A2A]">
+            <section className="flex flex-col grow md:flex-row md:shrink bg-[#2A2A2A]">
               <div className="w-full md:w-[30vw]">
                 <div>
                   <span className="text-[#FF4A4A]">FULL NAME:</span> {handleNull(character.biography["full-name"])}
