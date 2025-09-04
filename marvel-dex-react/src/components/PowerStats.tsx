@@ -8,7 +8,7 @@ type PowerStatsProps = {
 type Stat = {
   label: string;
   bgColor: string;
-  stat: string;
+  stat: number | null;
 };
 
 export const PowerStats: React.FC<PowerStatsProps> = ({ character }) => {
@@ -53,7 +53,7 @@ export const PowerStats: React.FC<PowerStatsProps> = ({ character }) => {
             {stat.label}
           </div>
           <div className="flex h-10 pl-60 md:pl-82 md:w-full text-2xl" style={{ width: `${stat.stat}%`, backgroundColor: `${stat.bgColor}` }}>
-            {stat.stat == "null" ? "UNKNOWN" : stat.stat}
+            {stat.stat == null ? "UNKNOWN" : stat.stat}
           </div>
         </div>
       ))}

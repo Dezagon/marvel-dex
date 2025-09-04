@@ -42,9 +42,6 @@ export const CharacterSummary: React.FC<CharacterSummaryProps> = ({ character })
                   <span className="text-[#FF4A4A]">FIRST-APPEARANCE:</span> {handleNull(character.biography["first-appearance"])}
                 </p>
                 <p>
-                  <span className="text-[#FF4A4A]">PUBLISHER:</span> {handleNull(character.biography.publisher)}
-                </p>
-                <p>
                   <span className="text-[#FF4A4A]">ALIGNMENT:</span> {handleNull(character.biography.alignment)}
                 </p>
                 <p>
@@ -54,20 +51,20 @@ export const CharacterSummary: React.FC<CharacterSummaryProps> = ({ character })
                   <span className="text-[#FF4A4A]">CLASSIFICATION:</span> {handleNull(character.appearance.race)}
                 </p>
                 <p>
-                  <span className="text-[#FF4A4A]">HEIGHT:</span> {handleNull(character.appearance.height.join(", "))}
+                  <span className="text-[#FF4A4A]">HEIGHT:</span> {handleNull(character.appearance.height)}
                 </p>
                 <p>
-                  <span className="text-[#FF4A4A]">WEIGHT:</span> {handleNull(character.appearance.weight.join(", "))}
+                  <span className="text-[#FF4A4A]">WEIGHT:</span> {handleNull(character.appearance.weight)}
                 </p>
               </div>
               {/* Affiliations and Connections */}
               <div className="w-screen md:w-[30vw]">
                 <p>
-                  <span className="text-[#FF4A4A]">GROUP-AFFILIATIONS:</span> {handleNull(character.connections["group-affiliation"])}
+                  <span className="text-[#FF4A4A]">GROUP-AFFILIATIONS:</span> {handleNull(character.connections["group-affiliation"].join(", "))}
                 </p>
                 <p>
                   {" "}
-                  <span className="text-[#FF4A4A]">RELATIVES:</span> {handleNull(character.connections.relatives)}
+                  <span className="text-[#FF4A4A]">RELATIVES:</span> {handleNull(character.connections.relatives.join(", "))}
                 </p>
               </div>
             </section>

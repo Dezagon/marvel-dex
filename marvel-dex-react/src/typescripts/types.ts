@@ -3,8 +3,6 @@ export type startEndForCharIDs = {
   end: number;
 };
 export type Character = {
-  response: string;
-  id: string;
   name: string;
   powerstats: Powerstats;
   biography: Biography;
@@ -15,12 +13,12 @@ export type Character = {
 };
 
 export type Powerstats = {
-  intelligence: string;
-  strength: string;
-  speed: string;
-  durability: string;
-  power: string;
-  combat: string;
+  intelligence: number | null;
+  strength: number | null;
+  speed: number | null;
+  durability: number | null;
+  power: number | null;
+  combat: number | null;
 };
 
 export type Biography = {
@@ -29,27 +27,24 @@ export type Biography = {
   aliases: string[];
   ["place-of-birth"]: string;
   ["first-appearance"]: string;
-  publisher: string;
   alignment: string;
 };
 
 export type Appearance = {
   gender: string;
   race: string;
-  height: string[];
-  weight: string[];
-  ["eye-color"]: string;
-  ["hair-color"]: string;
+  height: string;
+  weight: string;
 };
 
 export type Work = {
-  occupation: string;
+  occupation: string[];
   base: string;
 };
 
 export type Connections = {
-  ["group-affiliation"]: string;
-  relatives: string;
+  ["group-affiliation"]: string[];
+  relatives: string[];
 };
 
 export type Image = {

@@ -33,16 +33,16 @@ export const handleNull = (info: string): string => {
   return info == "null" || info == "-" ? "UNKNOWN" : info;
 };
 
-export const determineBackgroundColor = (stat: string): string => {
-  if (stat == "null") {
+export const determineBackgroundColor = (stat: number | null): string => {
+  if (stat == null) {
     return "#FF4A4A";
-  } else if (Number(stat) >= 80) {
+  } else if (stat >= 80) {
     return "#129003";
-  } else if (Number(stat) >= 65 && Number(stat) <= 79) {
+  } else if (stat >= 65 && Number(stat) <= 79) {
     return "#B0D033";
-  } else if (Number(stat) >= 35 && Number(stat) <= 64) {
+  } else if (stat >= 35 && Number(stat) <= 64) {
     return "#E3D402";
-  } else if (Number(stat) >= 25 && Number(stat) <= 34) {
+  } else if (stat >= 25 && Number(stat) <= 34) {
     return "#E99001";
   } else {
     return "#FF4A4A";
