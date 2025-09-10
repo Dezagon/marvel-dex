@@ -2,7 +2,11 @@ import { Navbar } from "./components/Navbar";
 import { Outlet } from "react-router-dom";
 // import Alert from "@mui/material/Alert";
 
-export const MarvelDex: React.FC = () => {
+type MarvelDexProps = {
+  userLoggedIn: boolean;
+};
+
+export const MarvelDex: React.FC<MarvelDexProps> = ({ userLoggedIn }) => {
   // MAIN LAYOUT FOR ROUTES
   return (
     <div className="bg-black w-screen h-screen">
@@ -17,7 +21,7 @@ export const MarvelDex: React.FC = () => {
         </Alert>
       )} */}
       <div>
-        <Navbar />
+        <Navbar userLoggedIn={userLoggedIn} />
       </div>
       <main>
         <Outlet />

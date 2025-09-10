@@ -30,8 +30,9 @@ ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 origins = [
+    "http://localhost:5173",
     "http://localhost:5173/",
-    "http://127.0.0.1:8000/"
+    "http://localhost:5173/signup",
 ]
 
 app.add_middleware(

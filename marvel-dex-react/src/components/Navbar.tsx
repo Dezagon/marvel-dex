@@ -1,6 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 import MarvelDexLogo from "../assets/marvel-dex-logo.png";
 
+type NavbarProps = {
+  userLoggedIn: boolean;
+};
+
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Heroes", href: "/heroes" },
@@ -10,7 +14,7 @@ const navItems = [
   //   { label: "Locations", href: "/locations" },
 ];
 
-export const Navbar: React.FC = () => {
+export const Navbar: React.FC<NavbarProps> = ({ userLoggedIn }) => {
   const location = useLocation();
   const locationInNavItems: boolean = navItems.some((item) => item.href === location.pathname && item.href != "/");
   return (
@@ -29,11 +33,12 @@ export const Navbar: React.FC = () => {
         )}
       </div>
       <nav className="bg-[#151515] flex w-full h-[55px]">
-        {navItems.map((navItem, index) => (
-          <Link key={index} to={navItem.href} className="w-full text-center flex items-center justify-center hover:bg-[#ec1f27] transition">
-            {navItem.label}
-          </Link>
-        ))}
+        {userLoggedIn &&
+          navItems.map((navItem, index) => (
+            <Link key={index} to={navItem.href} className="w-full text-center flex items-center justify-center hover:bg-[#ec1f27] transition">
+              {navItem.label}
+            </Link>
+          ))}
       </nav>
     </main>
   );

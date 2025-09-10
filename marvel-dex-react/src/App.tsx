@@ -15,6 +15,9 @@ function App() {
   // USE STATE FOR LIST OF ALL MARVEL CHARACTERS
   const [marvelCharacters, setMarvelCharacters] = useState<Character[]>([]);
 
+  // USE STATE FOR IF USER IS LOGGED IN
+  const [userLoggedIn, setUserLoggedIn] = useState<boolean>(false);
+
   // USE STATE FOR CHARACTER DISPLAY IN CharacterSummary COMPONENT
   const [character, setCharacter] = useState<Character>();
 
@@ -32,9 +35,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MarvelDex />}>
+        <Route path="/" element={<MarvelDex userLoggedIn={userLoggedIn} />}>
           {/* LOGIN AND SIGNUP  */}
-          <Route index element={<Login />} />
+          <Route index element={<Login userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn} />} />
           <Route path="signup" element={<SignUp />} />
           {/* HOME HEROES AND VILLAINS */}
           <Route path="home" element={<Home characters={marvelCharacters} handleClick={setCharacter} />} />

@@ -2,8 +2,7 @@ from sqlmodel import Field, SQLModel
 
 class User(SQLModel, table=True):
     username: str = Field(primary_key=True)
-    password: str
-    hashed_password: str | None
+    hashed_password: str
 
 class TokenData(SQLModel, table=True):
     username: str | None = Field(primary_key=True)
